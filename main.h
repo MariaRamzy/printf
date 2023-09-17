@@ -28,11 +28,11 @@ typedef struct pairing
 	int (*ptr)();
 } pair;
 
-int print_p(void);
+int print_percent(void);
 int _printf(const char *format, ...);
-int print_c(va_list arg);
-int print_s(va_list arg);
-int printy(const char *format, va_list arg);
+int print_char(va_list arg);
+int print_string(va_list arg);
+int print(const char *format, va_list arg);
 
 
 int printf_pointer(va_list val);
@@ -53,9 +53,6 @@ int *_strcpy(char *dest, char *src);
 int _strlenc(const char *s);
 int rev_string(char *s);
 int _strlenc(const char *s);
-int printf_37(void);
-int printf_char(va_list val);
-int printf_string(va_list val);
 int _putchar(char c);
 int _printf(const char *format, ...);
 

@@ -28,10 +28,11 @@ typedef struct pairing
 	int (*ptr)();
 } pair;
 
+/* print_function.c */
 int print_percent(void);
-int _printf(const char *format, ...);
 int print_char(va_list arg);
 int print_string(va_list arg);
+
 int print(const char *format, va_list arg);
 
 
@@ -54,6 +55,8 @@ int _strlenc(const char *s);
 int rev_string(char *s);
 int _strlenc(const char *s);
 int _putchar(char c);
+
+/* _printf.c */
 int _printf(const char *format, ...);
 
 #endif

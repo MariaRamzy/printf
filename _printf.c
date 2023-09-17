@@ -23,13 +23,13 @@ int _printf(const char *format, ...)
 			switch (format[count])
 			{
 				case 'c':
-					printf("\%c", va_arg(prts, int));
+					printf("%c", va_arg(prts, int));
 					break;
 				case 's':
-					printf("\%s", va_arg(prts, char*));
+					printf("%s", va_arg(prts, char*));
 					break;
 				case '%':
-					printf("\%%", va_arg(prts, void*));
+					printf("%%", va_arg(prts, void*));
 					break;
 				default:
 					putchar(format[count]);

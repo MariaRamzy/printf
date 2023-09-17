@@ -1,46 +1,121 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <stdarg.h>
-#include <limits.h>
 #include "main.h"
+
 /**
- * _printf - produces output according to a format
- * @format: is a character string
- * @...: variable
- * Return: the number of characters printed
- */
-int _printf(const char *format, ...)
+* print_char - prints a char
+* @arg: the character argument
+* Description - function prints a character argument
+* Return: void
+*/
+int print_char(va_list arg)
 {
-	int count = 0;
-	va_list prts;
+	int n = va_arg(arg, int);
 
-	va_start(prts, format);
+	write(1, &n, 1);
+	if (n == '\0')
+		return (0);
+	return (1);
+}
 
-	if (format[count] == '%')
+/**
+* print_string - prints a string
+* @arg: string to be printed
+* Description - this function print a string argument
+* Return: void
+*/
+int print_string(va_list arg)
+{
+	int n = 0;
+	char *a = va_arg(arg, char *);
+
+	if (a == NULL)
 	{
-		count++;
-		while (format[count] <= 48)
+		write(1, "(null)", 6);
+		return (-8);
+	}
+	while (*a != '\0')
+	{
+		write(1, a, 1);
+		n++;
+		a++;
+	}
+	return (n);
+}
+
+/**
+* print_percent - prints %
+* Return: 1
+*/
+int print_percent(void)
+{
+	write(1, "%", 1);
+	return (1);
+}
+
+/**
+* print - function that prints arguments
+* @format: the string
+* @arg: the arguments
+* Description - this function links operators to actions
+* Return: string length
+*/
+int print(const char *format, va_list arg)
+{
+	int i = 0, n = 0, add = 0, c = 0;
+
+	pair pai[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'\0', NULL}
+	};
+
+	while (format != NULL && format[c] != '\0')
+	{
+		n = 0;
+		add = 0;
+		if (format[c] == '%')
 		{
-			switch (format[count])
+			c++;
+			while (pai[n].a != '\0')
 			{
-				case 'c':
-					printf("%c", va_arg(prts, int));
-					break;
-				case 's':
-					printf("%s", va_arg(prts, char*));
-					break;
-				case '%':
-					printf("%%", va_arg(prts, void*));
-					break;
-				default:
-					_putchar(format[count]);
+				if (format[c] == pai[n].a)
+				{
+					add = pai[n].ptr(arg);
+					i = i + add;
+				}
+				n++;
 			}
 		}
+		else
+		{
+			i++;
+			write(1, &format[c], 1);
+		}
+		c++;
 	}
-	else
-	{
-		_putchar(format[count]);
-	}
-	count++;
-	va_end(prts);
-	return (count);
+	return (i);
+}
+
+/**
+* _printf - prints characters and strings
+* @format: the operators and string to be printed
+* Description - this function prints a string and chars
+* Return: the string length or -1
+*/
+int _printf(const char *format, ...)
+{
+	va_list arg;
+	int i;
+
+	if (format == NULL)
+		return (0);
+	va_start(arg, format);
+	if (format == NULL && *format == '\0')
+		return (-1);
+	i = print(format, arg);
+	va_end(arg);
+	return (i);
 }

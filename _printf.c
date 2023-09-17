@@ -32,13 +32,13 @@ int _printf(const char *format, ...)
 					printf("%%", va_arg(prts, void*));
 					break;
 				default:
-					putchar(format[count]);
+					_putchar(format[count]);
 			}
 		}
 	}
 	else
 	{
-		putchar(format[count]);
+		_putchar(format[count]);
 	}
 	count++;
 	va_end(prts);

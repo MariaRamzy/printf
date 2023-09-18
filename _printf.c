@@ -30,10 +30,10 @@ int _printf(const char *format, ...)
 					printf("%s", _strlen(va_arg(args, char*)));
 					break;
 				case '%':
-					putchar('%');
+					_putchar('%');
 					break;
 				default:
-					putchar(format[a]);
+					_putchar(format[a]);
 					break;
 			}
 			a++;
@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			count++;
-			putchar(format[a]);
+			_putchar(format[a]);
 		}
 	}
 	va_end(args);

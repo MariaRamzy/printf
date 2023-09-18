@@ -1,49 +1,28 @@
 #include "main.h"
 
 /**
- * _printf - produces output according to a format.
- * @format: a character string
- * @...: variable
- * Return: the number of characters printed
- * (excluding the null byte used to end output to strings)
+ * _printf - Receives the main string and all the necessary parameters to
+ * print a formated string
+ * @format: A string containing all the desired characters
+ * Return: A total count of the characters printed
  */
+
 int _printf(const char *format, ...)
 {
-	unsigned int count;
-	unsigned int a = 0;
-	va_list args;
+	int printed_chars;
+	conver_t f_list[] = {
+		{"%%", printf_percent},
+		{"c", printf_char},
+		{"s", printf_string},
+		{NULL, NULL}
+	};
+	va_list arg_list;
 
-	va_start(args, format);
-	while (format[a] != '\0')
-	{
-		a++;
-		if (!format)
-		{
-			return (-1);
+	if (format == NULL)
+		return (-1);
 
-			switch (format[a])
-			{
-				case 'c':
-					printf("%c", va_arg(args, int));
-					break;
-				case 's':
-					printf("%s", _strlen(va_arg(args, char*)));
-					break;
-				case '%':
-					_putchar('%');
-					break;
-				default:
-					_putchar(format[a]);
-					break;
-			}
-			a++;
-		}
-		else
-		{
-			count++;
-			_putchar(format[a]);
-		}
-	}
-	va_end(args);
-	return (count);
+	va_start(arg_list, format);
+	printed_chars = format_reciever(format, f_list, arg_list);
+	va_end(arg_list);
+	return (printed_chars);
 }

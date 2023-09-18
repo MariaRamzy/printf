@@ -2,48 +2,55 @@
 #define MAIN_H
 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <limits.h>
-#include <unistd.h>
 
-
+#define NULL_STRING "(null)"
+#define NUL '\0'
 
 /**
- * struct format - match the conversion specifiers for printf
- * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
- * @f: type pointer to function for the conversion specifier
+ * struct convert - defines a structure for symbols and functions
  *
+ * @sym: The operator
+ * @f: The function associated
  */
 
-typedef struct format
+struct convert
 {
-	char *id;
-	int (*f)();
-} convert_match;
+	char *sym;
+	int (*f)(va_list);
+};
+typedef struct convert conver_t;
 
-int printf_pointer(va_list val);
-int printf_hex_aux(unsigned long int num);
-int printf_HEX_aux(unsigned int num);
-int printf_exclusive_string(va_list val);
-int printf_HEX(va_list val);
-int printf_hex(va_list val);
-int printf_oct(va_list val);
-int printf_unsigned(va_list args);
-int printf_bin(va_list val);
-int printf_srev(va_list args);
-int printf_rot13(va_list args);
-int printf_int(va_list args);
-int printf_dec(va_list args);
-int _strlen(char *s);
-int *_strcpy(char *dest, char *src);
-int _strlenc(const char *s);
-int rev_string(char *s);
-int _strlenc(const char *s);
-int printf_37(void);
-int printf_char(va_list val);
-int printf_string(va_list val);
-int _putchar(char c);
+
 int _printf(const char *format, ...);
+int _putchar(char c);
+int format_reciever(const char *format, conver_t f_list[], va_list arg_list);
+int printf_percent(va_list);
+int printf_integer(va_list);
+int printf_char(va_list);
+int printf_string(va_list);
+int printf_binary(va_list);
+int printf_unsigned_integer(va_list);
+int printf_octal(va_list list);
+int printf_hex(va_list list);
+int printf_HEX(va_list list);
+int printf_String(va_list val);
+int printf_pointer(va_list val);
+int printf_rev(va_list l);
+int printf_rot13(va_list list);
 
+int printf_number(va_list args);
+unsigned int base_len(unsigned int, int);
+char *rev_string(char *);
+void write_base(char *str);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int printf_unsgined_number(unsigned int n);
+int hex_check(int num, char x);
+int printf_hex_aux(unsigned long int num);
+int isNonAlphaNumeric(char c); 
+int _puts(char *str);
+char *convert(unsigned long int num, int base, int lowercase);
 #endif

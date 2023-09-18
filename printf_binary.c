@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * rev_string - reverses a string in place
- *
- * @s: string to reverse
- * Return: A pointer to a character
+ * rev_string - reverses a string in place.
+ * @s: string to reverse.
+ * Return: A pointer to a character.
  */
 char *rev_string(char *s)
 {
@@ -31,9 +30,9 @@ return (dest);
 }
 
 /**
- * printf_binary - Converts a number from base 10 to binary
- * @list: List of arguments passed to this function
- * Return: The binary number printed
+ * printf_binary - Converts a number from base 10 to binary.
+ * @list: List of arguments passed to this function.
+ * Return: The binary number printed.
  */
 
 int printf_binary(va_list list)

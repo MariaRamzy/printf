@@ -21,3 +21,17 @@ A character that specifies the type of conversion to be applied. The conversion 
 -  **c**: The **_int_** argument is converted to a char, and the resulting character is written.
 -  **s**: The **_const char_** * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up  to  (but not including) a terminating null byte ('\0').
 - **%**: A '**%**' is written. No argument is converted. The complete conversion specification is '**%%**'.
+
+#### Compilation:alembic:
+------------
+
+
+The code must be compiled this way:
+
+*$ gcc -Wall -Werror -Wextra -pedantic *.c*
+
+As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
+
+The main files will include your main header file (main.h): *#include main.h*
+
+------------

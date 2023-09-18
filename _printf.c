@@ -1,121 +1,53 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
 #include "main.h"
-
 /**
-* print_char - prints a char
-* @arg: the character argument
-* Description - function prints a character argument
-* Return: void
-*/
-int print_char(va_list arg)
+ * _printf - is a function that selects the correct function to print.
+ * @format: identifier to look for.
+ * Return: the length of the string.
+ */
+int _printf(const char * const format, ...)
 {
-	int n = va_arg(arg, int);
-
-	write(1, &n, 1);
-	if (n == '\0')
-		return (0);
-	return (1);
-}
-
-/**
-* print_string - prints a string
-* @arg: string to be printed
-* Description - this function print a string argument
-* Return: void
-*/
-int print_string(va_list arg)
-{
-	int n = 0;
-	char *a = va_arg(arg, char *);
-
-	if (a == NULL)
-	{
-		write(1, "(null)", 6);
-		return (-8);
-	}
-	while (*a != '\0')
-	{
-		write(1, a, 1);
-		n++;
-		a++;
-	}
-	return (n);
-}
-
-/**
-* print_percent - prints %
-* Return: 1
-*/
-int print_percent(void)
-{
-	write(1, "%", 1);
-	return (1);
-}
-
-/**
-* print - function that prints arguments
-* @format: the string
-* @arg: the arguments
-* Description - this function links operators to actions
-* Return: string length
-*/
-int print(const char *format, va_list arg)
-{
-	int i = 0, n = 0, add = 0, c = 0;
-
-	pair pai[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
-		{'\0', NULL}
+	convert_match m[] = {
+		{"%s", printf_string},
+		{"%c", printf_char},
+		{"%%", printf_37},
+	/**	{"%i", printf_int},
+		{"%d", printf_dec},
+		{"%r", printf_srev},
+		{"%R", printf_rot13},
+		{"%b", printf_bin},
+		{"%u", printf_unsigned},
+		{"%o", printf_oct},
+		{"%x", printf_hex},
+		{"%X", printf_HEX},
+		{"%S", printf_exclusive_string},
+		{"%p", printf_pointer}*/
 	};
 
-	while (format != NULL && format[c] != '\0')
-	{
-		n = 0;
-		add = 0;
-		if (format[c] == '%')
-		{
-			c++;
-			while (pai[n].a != '\0')
-			{
-				if (format[c] == pai[n].a)
-				{
-					add = pai[n].ptr(arg);
-					i = i + add;
-				}
-				n++;
-			}
-		}
-		else
-		{
-			i++;
-			write(1, &format[c], 1);
-		}
-		c++;
-	}
-	return (i);
-}
+	va_list args;
+	int i = 0, j, len = 0;
 
-/**
-* _printf - prints characters and strings
-* @format: the operators and string to be printed
-* Description - this function prints a string and chars
-* Return: the string length or -1
-*/
-int _printf(const char *format, ...)
-{
-	va_list arg;
-	int i;
-
-	if (format == NULL)
-		return (0);
-	va_start(arg, format);
-	if (format == NULL && *format == '\0')
+	va_start(args, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	i = print(format, arg);
-	va_end(arg);
-	return (i);
+
+Here:
+	while (format[i] != '\0')
+	{
+		j = 13;
+		while (j >= 0)
+		{
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
+			{
+				len += m[j].f(args);
+				i = i + 2;
+				goto Here;
+			}
+			j--;
+		}
+		putchar(format[i]);
+		len++;
+		i++;
+	}
+	va_end(args);
+	return (len);
 }

@@ -22,20 +22,6 @@ typedef struct format
 	int (*f)();
 } convert_match;
 
-typedef struct pairing
-{
-	char a;
-	int (*ptr)();
-} pair;
-
-/* print_function */
-int print_percent(void);
-int print_char(va_list arg);
-int print_string(va_list arg);
-
-int print(const char *format, va_list arg);
-
-
 int printf_pointer(va_list val);
 int printf_hex_aux(unsigned long int num);
 int printf_HEX_aux(unsigned int num);
@@ -54,9 +40,10 @@ int *_strcpy(char *dest, char *src);
 int _strlenc(const char *s);
 int rev_string(char *s);
 int _strlenc(const char *s);
+int printf_37(void);
+int printf_char(va_list val);
+int printf_string(va_list val);
 int _putchar(char c);
-
-/* _printf.c */
 int _printf(const char *format, ...);
 
 #endif

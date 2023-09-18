@@ -5,8 +5,9 @@
  */
 int main(void)
 {
-	printf("Character:[%c]\n", 'H');
-	printf("String:[%s]\n", "I am a string !");
-	printf("Percent:[%%]\n");
+	printf("Let's print a simple sentence.\n");
+	printf("%s", "I am a string !\n");
+	printf("%c\n", 'S');
+	printf("%%\n");
 	return (0);
 }

@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * printf_string - print a string.
  * @val: argumen t.

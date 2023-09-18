@@ -1,4 +1,4 @@
-# The _printf() function was developed by cohort #18 students Omnia Ashraf & Maria Ramzy.
+# The _printf() function was developed by cohort #18 students Omnia Ashraf & Maria Saeed.
 
 **_printf** - formatted output conversion
 

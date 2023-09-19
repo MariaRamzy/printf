@@ -11,13 +11,14 @@ int get_flag(char *f)
 	switch (*f)
 	{
 		case '+':
-			printf("%+", '+');
 			break;
 		case ' ':
-			printf("%%", ' ');
 			break;
 		case '#':
-			printf("%#", '#');
+			break;
+		case '0':
+			break;
+		case '-' :
 			break;
 	}
 	return (1);

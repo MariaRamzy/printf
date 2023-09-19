@@ -30,3 +30,4 @@ _putchar('x');
 b = printf_hex_aux(a);
 return (b + 2);
 }
+

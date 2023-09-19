@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * format_reciever - Receives the main string and all the
+ * format_reciever - Receives the main string and all the.
  * necessary parameters to print a formated string.
  * @format: A string containing all the desired characters.
  * @f_list: A list of all the posible functions.

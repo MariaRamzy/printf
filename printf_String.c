@@ -2,7 +2,7 @@
 
 /**
  * printf_String - print exclusuives string.
- * @val: arguments passed to the function
+ * @val: argument.
  * Return: the length of the string.
  */
 
@@ -29,6 +29,7 @@ len += _putchar(*s);
 }
 return (len);
 }
+
 /**
  * isNonAlphaNumeric - determines if char is a non-
  * alphanumeric char on ASCII table
@@ -36,7 +37,7 @@ return (len);
  * Return: true or false
  */
 
-int isNonAlphaNumeric(char c)
+int isNonAlphaNumeric(char c) 
 {
 return ((c > 0 && c < 32) || c >= 127);
 }

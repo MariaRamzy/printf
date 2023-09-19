@@ -1,70 +1,39 @@
 #include "main.h"
-
 /**
- * printf_String - print exclusuives string.
- * @val: argumen t.
+ * printf_String - print String.
+ * @val: argument.
  * Return: the length of the string.
  */
 
 int printf_String(va_list val)
 {
-register short len = 0;
-char *res, *s = va_arg(val, char *);
-int count;
+char *s;
+int i, len = 0;
+int cast;
 
-if (!s)
-return (_puts(NULL_STRING));
-for (; *s; s++)
+s = va_arg(val, char *);
+if (s == NULL)
+s = "(null)";
+for (i = 0; s[i] != '\0'; i++)
 {
-if (isNonAlphaNumeric(*s))
+if (s[i] < 32 || s[i] >= 127)
 {
-count += _puts("\\x");
-res = convert(*s, 16, 0);
-if (!res[1])
-len += _putchar('0');
-len += _puts(res);
+_putchar('\\');
+_putchar('x');
+len = len + 2;
+cast = s[i];
+if (cast < 16)
+{
+_putchar('0');
+len++;
+}
+len = len + printf_hex_aux(cast);
 }
 else
-len += _putchar(*s);
+{
+_putchar(s[i]);
+len++;
+}
 }
 return (len);
-}
-
-/**
- * isNonAlphaNumeric - determines if char is a non-
- * alphanumeric char on ASCII table
- * @c: input char
- * Return: true or false
- */
-
-int isNonAlphaNumeric(char c)
-{
-return ((c > 0 && c < 32) || c >= 127);
-}
-
-/**
- * convert - converts number and base into string
- * @num: input number
- * @base: input base
- * @lowercase: flag if hexa values need to be lowercase
- * Return: result string
- */
-
-char *convert(unsigned long int num, int base, int lowercase)
-{
-static char *rep;
-static char buffer[50];
-char *ptr;
-
-rep = (lowercase)
-? "0123456789abcdef"
-: "0123456789ABCDEF";
-ptr = &buffer[49];
-*ptr = NUL;
-do {
-*--ptr = rep[num % base];
-num /= base;
-} while (num);
-
-return (ptr);
 }

@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * printf_address - print as pointer
- * @val: val of argument
- * Return: number
+ * printf_pointer - prints an hexgecimal number.
+ * @val: arguments.
+ * Return: counter.
  */
 
-int printf_address(va_list val)
+int printf_pointer(va_list val)
 {
 void *p;
 char *s = "(nil)";

@@ -27,7 +27,7 @@ if (cast < 16)
 _putchar('0');
 len++;
 }
-len = len + printf_hex_aux(cast);
+len = len + printf_HEX_aux(cast);
 }
 else
 {

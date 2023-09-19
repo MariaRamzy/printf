@@ -20,6 +20,7 @@ The **_printf()** function produce output according to a *format* as described b
 The  **_printf()** function write the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of ***stdarg(3)*** are converted for output.
 
 ### Format of the format string
+---------------
 
 The format string is a character string, beginning and ending inits  initial shift state, if any. The format string is composed of zero or more  directives:  ordinary  characters  (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments.
 Each conversion specification is introduced by the character % and ends with conversion specifier.

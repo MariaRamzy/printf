@@ -64,4 +64,14 @@ int printf_HEX_aux(unsigned int num);
 int isNonAlphaNumeric(char c);
 int _puts(char *str);
 char *convert(unsigned long int num, int base, int lowercase);
+
+int handle_print(const char *fmt, int *i,
+va_list list, char buffer[], int flags, int width, int precision, int size);
+
+/* Funciotns to handle other specifiers */
+int get_flags(const char *format, int *i);
+int get_width(const char *format, int *i, va_list list);
+int get_precision(const char *format, int *i, va_list list);
+int get_size(const char *format, int *i);
+
 #endif

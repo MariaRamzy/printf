@@ -11,6 +11,7 @@ A README is a text file that introduces and explains a project. It contains info
 
 **#include "main.h"**
 **int _printf(const char** *format* **, ...);**
+------------------
 
 ## Description
 -------------

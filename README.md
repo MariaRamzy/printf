@@ -26,6 +26,8 @@ The format string is a character string, beginning and ending inits  initial shi
 Each conversion specification is introduced by the character % and ends with conversion specifier.
 
 ### Conversion specifiers
+---------------
+
 A character that specifies the type of conversion to be applied. The conversion specifiers and their meaning are:
 -  **d, i**: The **_int_** argument should be signed decimal notation, and the resulting number is written.
 -  **c**: The **_int_** argument is converted to a char, and the resulting character is written.

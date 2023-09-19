@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * printf_rot13 - prints a string using rot13
- * @list: list of arguments from _printf
- * Return: length of the printed string
+ * printf_rot13 - prints a string using rot13.
+ * @list: list of arguments from _printf.
+ * Return: length of the printed string.
  */
 
 int printf_rot13(va_list list)

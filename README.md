@@ -22,6 +22,15 @@ A character that specifies the type of conversion to be applied. The conversion 
 -  **s**: The **_const char_** * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up  to  (but not including) a terminating null byte ('\0').
 - **%**: A '**%**' is written. No argument is converted. The complete conversion specification is '**%%**'.
 
+
+####Introduction
+---------------
+
+Betty style is a set of guidelines for writing clean, readable, and maintainable code. It includes conventions for naming variables, functions, and other programming elements, as well as guidelines for formatting code, commenting, and organizing code structure. Following Betty style can make your code more understandable to others, reduce errors, and make it easier to modify and maintain your code over time. It's named after Betty Holberton, one of the original programmers of the ENIAC computer and a pioneer in software engineering.
+
+-------------------------
+
+
 #### Compilation:alembic:
 ------------
 

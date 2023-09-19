@@ -24,7 +24,6 @@ struct convert
 };
 typedef struct convert conver_t;
 
-
 int _printf(const char *format, ...);
 int _putchar(char c);
 int format_reciever(const char *format, conver_t f_list[], va_list arg_list);
@@ -54,4 +53,7 @@ int printf_HEX_aux(unsigned int num);
 int isNonAlphaNumeric(char c);
 int _puts(char *str);
 char *convert(unsigned long int num, int base, int lowercase);
+
+int get_flag(char *f);
+
 #endif

@@ -47,7 +47,7 @@ int printf_octal(va_list list);
 int printf_hex(va_list list);
 int printf_HEX(va_list list);
 int printf_String(va_list val);
-int printf_pointer(va_list val);	
+int printf_pointer(va_list val);
 int printf_rev(va_list l);
 int printf_rot13(va_list list);
 int get_flag(char *f);

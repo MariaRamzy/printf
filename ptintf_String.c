@@ -2,14 +2,14 @@
 
 /**
  * printf_String - print exclusuives string.
- * @l: arguments passed to the function
+ * @val: arguments passed to the function
  * Return: the length of the string.
  */
 
-int printf_String(va_list l)
+int printf_String(va_list val)
 {
 register short len = 0;
-char *res, *s = va_arg(l, char *);
+char *res, *s = va_arg(val, char *);
 int count;
 
 if (!s)

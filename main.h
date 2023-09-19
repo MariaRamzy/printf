@@ -53,7 +53,4 @@ int printf_HEX_aux(unsigned int num);
 int isNonAlphaNumeric(char c);
 int _puts(char *str);
 char *convert(unsigned long int num, int base, int lowercase);
-
-int get_flag(char *f);
-
 #endif

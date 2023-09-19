@@ -7,7 +7,7 @@
  */
 int get_flag(char *f)
 {
-	
+
 	switch (*f)
 	{
 		case '+':
@@ -18,7 +18,7 @@ int get_flag(char *f)
 			break;
 		case '0':
 			break;
-		case '-' :
+		case '-':
 			break;
 	}
 	return (1);

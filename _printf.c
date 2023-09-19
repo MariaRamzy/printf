@@ -23,7 +23,8 @@ int _printf(const char *format, ...)
 		{"o", printf_octal},
 		{"S", printf_String},
 		{"p", printf_pointer},
-		
+
+
 		{NULL, NULL}
 	};
 va_list arg_list;

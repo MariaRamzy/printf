@@ -17,6 +17,9 @@ int _printf(const char *format, ...)
 		{"i", printf_integer},
 		{"d", printf_integer},
 		{"b", printf_binary},
+		{"x", printf_hex},
+		{"X", printf_HEX},
+		{"u", printf_unsigned_integer},
 		{NULL, NULL}
 	};
 	va_list arg_list;

@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * printf_hex - Prints a representation of a decimal number on base16 lowercase
- * @list: List of the arguments passed to the function
- * Return: Number of characters printed
+ * printf_hex - Prints a representation of.
+ * a decimal number on base16 lowercase.
+ * @list: List of the arguments passed to the function.
+ * Return: Number of characters printed.
  */
 
 int printf_hex(va_list list)

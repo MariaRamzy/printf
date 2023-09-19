@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		{"b", printf_binary},
 		{"x", printf_hex},
 		{"X", printf_HEX},
-		{"u", printf_unsigned_integer},
+		{"u", print_unsigned},
 		{NULL, NULL}
 	};
 	va_list arg_list;

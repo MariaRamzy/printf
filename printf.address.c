@@ -5,18 +5,28 @@
  * @val: val of argument
  * Return: number
  */
+
 int printf_address(va_list val)
 {
-	void *p;
-	unsigned int a;
+void *p;
+char *s = "(nil)";
+long int a;
+int b;
+int i;
 
-	a = *p;
+p = va_arg(val, void*);
+if (p == NULL)
+{
+for (i = 0; s[i] != '\0'; i++)
+{
+_putchar(s[i]);
+}
+return (i);
+}
 
-	if (p == NULL)
-	{
-		printf("%p", va_arg(val, void *));
-	}
-	_putchar ('x');
-	_putchar ('0');
-	return (a);
+a = (unsigned long int)p;
+_putchar('0');
+_putchar('x');
+b = printf_hex_aux(a);
+return (b + 2);
 }

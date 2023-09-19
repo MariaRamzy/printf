@@ -33,7 +33,7 @@ int printf_integer(va_list);
 int printf_char(va_list);
 int printf_string(va_list);
 int printf_binary(va_list);
-int printf_unsigned_integer(va_list);
+int printf_unsigned_integer(va_list list);
 int printf_octal(va_list list);
 int printf_hex(va_list list);
 int printf_HEX(va_list list);

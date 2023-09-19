@@ -4,7 +4,6 @@
  * @val: argument.
  * Return: the length of the string.
  */
-
 int printf_String(va_list val)
 {
 char *s;

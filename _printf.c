@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{"u", printf_unsigned_integer},
 		{"o", printf_octal},
 		{"S", printf_String},
-		{"p", printf_address},
+		{"p", printf_pointer},
 		{NULL, NULL}
 	};
 	va_list arg_list;

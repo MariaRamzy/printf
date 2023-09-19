@@ -40,6 +40,7 @@ int printf_String(va_list val);
 int printf_pointer(va_list val);	
 int printf_rev(va_list l);
 int printf_rot13(va_list list);
+int get_flag(char *f);
 
 int printf_number(va_list args);
 unsigned int base_len(unsigned int, int);

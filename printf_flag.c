@@ -8,18 +8,18 @@
 int get_flag(char *f)
 {
 
-	switch (*f)
-	{
-		case '+':
-			break;
-		case ' ':
-			break;
-		case '#':
-			break;
-		case '0':
-			break;
-		case '-':
-			break;
-	}
-	return (1);
+        switch (*f)
+        {
+                case '+':
+                        break;
+                case ' ':
+                        break;
+                case '#':
+                        break;
+                case '0':
+                        break;
+                case '-' :
+                        break;
+        }
+        return (1);
 }

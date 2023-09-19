@@ -31,6 +31,14 @@ Betty style is a set of guidelines for writing clean, readable, and maintainable
 -------------------------
 
 
+####Why is Betty Style Important?
+-----------------
+
+Following Betty style can make your code more understandable and maintainable. It can also make it easier to work in a team environment, where different programmers may be working on the same codebase. When all members of a team adhere to the same coding conventions, it's easier to understand and modify each other's code. Additionally, following Betty style can help reduce errors and improve code quality.
+
+----------------------
+
+
 #### Compilation:alembic:
 ------------
 

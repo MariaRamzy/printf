@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * printf_rev - prints a string in reverse
- * @l: argument from _printf
- * Return: length of the printed string
+ * printf_rev - prints a string in reverse.
+ * @l: argument from _printf.
+ * Return: length of the printed string.
  */
 
 int printf_rev(va_list l)

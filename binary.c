@@ -30,6 +30,15 @@ num = num / base;
 }
 return (i);
 }
+
+/**
+ * _memcpy - copy memory area
+ * @dest: Destination for copying
+ * @src: Source to copy from
+ * @n: The number of bytes to copy
+ * Return: The _memcpy() function returns a pointer to destination.
+ */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 unsigned int i;
@@ -40,12 +49,11 @@ dest[i] = '\0';
 return (dest);
 }
 
-
 /**
  * hex_check - Checks which hex function is calling it
- * @num: Number to convert into letter
+ * @num: Number convert into letter
  * @x: Tells which hex function is calling it
- * Return: Ascii value for a letter
+ * Return: Ascii value for letter
  */
 
 int hex_check(int num, char x)
